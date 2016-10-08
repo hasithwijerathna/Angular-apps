@@ -1,0 +1,31 @@
+<!--2A-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>scope test app</title>
+    <style>
+        .toggleContent {
+            background-color: beige;
+            width: auto;
+        }
+    </style>
+    <script src="../thirdparty/angular.js"></script>
+    <script src="app.scope-extends.js"></script>
+</head>
+<body ng-app="sampleApp" ng-controller="AppCtrl">
+    <phone value="Call Home" dial="callHome(message)"></phone>
+    <phone value="Call Office" dial="callOffice(message)"></phone>
+
+    Ctrl
+    <input type="text" ng-model="ctrlFlavor">
+
+    Dir
+    <drink flavor="ctrlFlavor"></drink>
+
+<br>============================<br>
+    Getting value from attribute: <vehicle model="Aqua"></vehicle>
+    <input type="text" ng-model="vehicleType"><br>
+    Getting value from controller: <vehicle model="{{vehicleType}}"></vehicle>
+
+</body>
+</html>

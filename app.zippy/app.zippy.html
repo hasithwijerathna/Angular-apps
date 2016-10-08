@@ -1,0 +1,49 @@
+<!--1A, 1B-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>scope test app</title>
+    <style>
+        .toggleContent{
+            background-color: beige;
+            width: auto;
+        }
+    </style>
+	<script src="../thirdparty/angular.js"></script>
+    <script src="app.zippy.js"></script>
+</head>
+<body ng-app="sampleApp">
+    <script type="text/ng-template" id="zippyTemplate.html">
+        <div>
+            <h3 ng-click="toggelContent()">{{title}}</h3>
+            <div ng-show="isContentVisible" class="toggleContent" ng-transclude>Hello World</div>
+            <div ></div>
+        </div>
+    </script>
+
+	<div ng-controller="AppCtrl">
+		<input type="text" ng-model="model.title">
+		<input type="text" ng-model="model.content">
+
+		<zippy title="{{model.title}}">
+			<pre>
+			This is the {{model.content}}
+
+			public class user{
+				private String name;
+
+				public void setName(String name){
+					this.name = name;
+				}
+
+				public String getName(){
+					return this.name;
+				}
+			}
+			</pre>
+		</zippy>
+	</div>
+
+
+</body>
+</html>

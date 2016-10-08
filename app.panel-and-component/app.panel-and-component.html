@@ -1,0 +1,45 @@
+<!--2A-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>scope test app</title>
+    <style>
+        .toggleContent {
+            background-color: beige;
+            width: auto;
+        }
+    </style>
+    <script src="../thirdparty/angular.js"></script>
+    <script src="app.panel-and-component.js"></script>
+</head>
+<body ng-app="sampleApp" >
+
+<clock timezone="PST"></clock>
+
+<panel title="Clock panel">
+    <clock timezone="UST"></clock>
+</panel>
+
+<panel title="Clock panel">
+    <clock timezone="UST"></clock>
+    <clock timezone="PST"></clock>
+    <clock timezone="KST"></clock>
+    <clock timezone="SST"></clock>
+    <clock timezone="FST"></clock>
+    <clock timezone="SST"></clock>
+</panel>
+
+<panel title="User Info">
+    <p>Hello i am hasith</p>
+    Friends:
+    <ul>
+        <li>Kamal</li>
+        <li>Nimal</li>
+        <li>Janith</li>
+        <li>Ramith</li>
+    </ul>
+    <clock timezone="SST"></clock>
+</panel>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>scope test app</title>
+	<style>
+	.button{
+		width: 100%;
+	    background-color: skyblue;
+	    text-align: center;
+	    margin: 5px;
+        border-style: groove;
+	}
+	</style>
+	<script src="../thirdparty/angular.js"></script>
+	<script src="../thirdparty/angular-route.js"></script>
+    <script src="app.index.js"></script>
+</head>
+<body ng-app="sampleApp">
+
+<div ng-controller="Tweet">	
+	<div class="button" ng-repeat="item in ['COLOMBO', 'KANDY', 'MAWANELLA']" ng-click="myFunc($event)">
+		{{item}} {{$index}} {{ev.pageX}}
+	</div>
+
+	<span ng-click="$log.info($event)"> Info Demo</span><br>
+	<span ng-click="$log.warn($event)"> Warnning Demo</span>
+</div>
+
+<div ng-controller="NameCtrl">	
+	<input type="button" value="Show Name" ng-click="showName()">
+</div>
+
+<div ng-view></div>
+
+</body>
+</html>
